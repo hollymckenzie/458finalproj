@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-end>
+        {{item.note}}
+      </div>
+    </button> -->
+    <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-start></ion-icon>
+      {{p.title}}
+    </button>
+  </ion-list>
+
+
+
+  
+
+  <!-- <hr style="height: 5px;border-top:5px solid#FF1F21" /> -->
+  <!-- <hr style="height:5px;border-top:5px solid #BF9340" /> -->
+<div class="decoration">
+  <hr style="height:5px;border-top:10px solid #00ABAA" />
+  <hr style="height: 5px;border-top:10px solid #306E91" />
+  <hr style="height: 5px;border-top:10px solid#423091" />
+  <hr style="height:5px;border-top:10px solid #00ABAA" />
+  <hr style="height: 5px;border-top:10px solid #306E91" />
+  <hr style="height: 5px;border-top:10px solid#423091" />
+  
+</div>
+  <!-- <hr style="height: 5px;border-top:5px solid #306E91" /> -->
+  <!-- //<hr style="height:1px;border-top:1px solid #f00" /> -->
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
