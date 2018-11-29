@@ -1,0 +1,34 @@
+
+<ion-header>
+	<ion-navbar>
+		<ion-title>Sign up</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<form (ngSubmit)="signup()" [formGroup]="loginForm">
+		<ion-list inset>
+
+				<ion-item>
+						<ion-input formControlName="email" placeholder="Email" type="text" [class.invalid]="!loginForm.controls.email.valid && (loginForm.controls.email.dirty)"></ion-input>
+					</ion-item>
+					<ion-item *ngIf="!loginForm.controls.email.valid  && (loginForm.controls.email.dirty)">
+						<p>Please enter a valid email.</p>
+					</ion-item>
+					<ion-item>
+							<ion-input formControlName="password" placeholder="Password" type="password" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+					</ion-item>
+			 
+					<ion-item *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+						<p>Please enter a valid password.</p>
+					</ion-item>
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{signupError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!loginForm.valid">Sign up</button>
+		</div>
+	</form>
+</ion-content>

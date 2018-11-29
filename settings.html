@@ -1,0 +1,35 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Settings</ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-list radio-group>
+    <ion-list-header>
+      Difficulty
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Easy</ion-label>
+      <ion-radio (click)="showAlertEasy()" value="easy"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Medium</ion-label>
+      <ion-radio (click)="showAlertMed()" value="medium"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Hard</ion-label>
+      <ion-radio (click)="showAlertHard()" value="hard" ></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>
